@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<style>
+    .bg {
+        background: rgb(174, 138, 138);
+
+
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .box {
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .boxb {
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .b {
+        outline: 5px solid red;
+    }
+
+    .bigimg {
+        width: 400px;
+        height: 400px;
+
+    }
+</style>
+
+<body>
+    <div class="container d-flex mt-3 bg ">
+        <div class="box m-3 "><img src="./imgs/person1.jpg" alt=""></div>
+        <div class="box m-3 "><img src="./imgs/person2.jpg" alt=""></div>
+        <div class="box m-3 "><img src="./imgs/person3.jpg" alt=""></div>
+        <div class="box m-3"><img src="./imgs/person4.jpg" alt=""></div>
+        <div class="box m-3"><img src="./imgs/person5.jpg" alt=""></div>
+    </div>
+    <div class="container d-flex justify-content-center mt-5">
+        <div class="  bigimg boxb  "><img src="./imgs/person1.jpg" alt=""></div>
+    </div>
+
+
+
+
+    <script src="./js/jquery-3.6.0.js"></script>
+    <script>
+        //點選圖片 click
+        //跑出紅色border
+
+        $(".box ").click(function () {
+            // console.log("this", $(this));
+            $(this).addClass("b").siblings().removeClass("b");
+
+
+        });
+
+        //點選上面圖片 click
+        //上面小圖變大圖
+        $(".box img").click(function () {
+            const imgSrc = $(this).attr("src");
+            $(".bigimg img").attr("src", imgSrc);
+        });
+
+    </script>
+</body>
+
+</html>
